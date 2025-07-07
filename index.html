@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feed Instagram Adaptado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-light bg-white justify-content-between px-3 shadow-sm">
+    <a class="navbar-brand"><strong>Instagram</strong></a>
+    <div class="dropdown">
+      <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-label="Configuración">
+        <i class="fas fa-cog"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Perfil</a></li>
+        <li><a class="dropdown-item" href="#">Configuración</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="text-center my-3">
+    <button id="gridView" class="btn btn-primary mx-1" aria-label="Vista en cuadrícula">
+      <i class="fas fa-th"></i>
+    </button>
+    <button id="listView" class="btn btn-outline-primary mx-1" aria-label="Vista en lista">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- GRID VIEW -->
+  <div class="container" id="gridFeed">
+    <div class="row g-3">
+      <div class="col-4" data-user="usuario1" data-img="img/logo.png" data-likes="183.000" data-caption="¡Tinta!">
+        <img src="img/logo.png" alt="Logo" />
+      </div>
+      <div class="col-4" data-user="usuario1" data-img="img/perfil2.jpg" data-likes="128.000" data-caption="¡Arte!">
+        <img src="img/perfil2.jpg" alt="Perfil 2" />
+      </div>
+      <div class="col-4" data-user="usuario2" data-img="img/tattoo2.jpg" data-likes="233.000" data-caption="Nuevo tattoo 🔥 ¡Me encanta cómo quedó!">
+        <img src="img/tattoo2.jpg" alt="Tattoo 2" />
+      </div>
+      <div class="col-4" data-user="usuario3" data-img="img/perfil3.jpg" data-likes="512.000" data-caption="Explorando la ciudad 👟💕">
+        <img src="img/perfil3.jpg" alt="Perfil 3" />
+      </div>
+      <div class="col-4" data-user="usuario4" data-img="img/perfil4.jpg" data-likes="76.000" data-caption="Selfie casual 😊">
+        <img src="img/perfil4.jpg" alt="Perfil 4" />
+      </div>
+      <div class="col-4" data-user="usuario3" data-img="img/tattoo3.jpg" data-likes="512" data-caption="Explorando la ciudad 👟💕">
+        <img src="img/tattoo3.jpg" alt="Tattoo 3" />
+      </div>
+      <div class="col-4" data-user="usuario4" data-img="img/perfil6.jpg" data-likes="76" data-caption="Selfie casual 😊">
+        <img src="img/perfil6.jpg" alt="Perfil 6" />
+      </div>
+      <div class="col-4" data-user="usuario5" data-img="img/perfil7.jpg" data-likes="301" data-caption="Mi nuevo diseño de tattoo.">
+        <img src="img/perfil7.jpg" alt="Perfil 7" />
+      </div>
+      <div class="col-4" data-user="usuario5" data-img="img/tattoo1.jpg" data-likes="301" data-caption="Mi nuevo diseño de tattoo.">
+        <img src="img/tattoo1.jpg" alt="Tattoo 1" />
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLICACIONES LISTA-->
+  <div class="container d-none" id="listFeed">
+    <!-- Publicación 1 -->
+    <div class="post-container" data-user="usuario1" data-likes="183.000" data-caption="¡Gran día en la playa con amigos!" data-img="img/logo.png">
+      <div class="post-header">
+        <img src="img/logo.png" alt="usuario1" />
+        <strong>usuario1</strong>
+      </div>
+      <img src="img/logo.png" alt="Publicacion 1" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>183.000 likes</strong></div>
+      <div class="post-caption"><strong>usuario1</strong> ¡Tinta!</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 2 -->
+    <div class="post-container" data-user="usuario1" data-likes="128.000" data-caption="¡Gran día en la playa con amigos!" data-img="img/perfil2.jpg">
+      <div class="post-header">
+        <img src="img/perfil2.jpg" alt="usuario1" />
+        <strong>usuario1</strong>
+      </div>
+      <img src="img/perfil2.jpg" alt="Publicacion 2" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>128.000 likes</strong></div>
+      <div class="post-caption"><strong>usuario1</strong> ¡Arte!</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 3 -->
+    <div class="post-container" data-user="usuario2" data-likes="233.000" data-caption="Nuevo tattoo 🔥 ¡Me encanta cómo quedó!" data-img="img/tattoo2.jpg">
+      <div class="post-header">
+        <img src="img/tattoo2.jpg" alt="usuario2" />
+        <strong>usuario2</strong>
+      </div>
+      <img src="img/tattoo2.jpg" alt="Publicacion 3" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>233.000 likes</strong></div>
+      <div class="post-caption"><strong>usuario2</strong> Nuevo tattoo 🔥 ¡Me encanta cómo quedó!</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 4 -->
+    <div class="post-container" data-user="usuario3" data-likes="512.000" data-caption="Explorando la ciudad 👟💕" data-img="img/perfil3.jpg">
+      <div class="post-header">
+        <img src="img/perfil3.jpg" alt="usuario3" />
+        <strong>usuario3</strong>
+      </div>
+      <img src="img/perfil3.jpg" alt="Publicacion 4" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>512.000 likes</strong></div>
+      <div class="post-caption"><strong>usuario3</strong> Explorando la ciudad 👟💕</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 5 -->
+    <div class="post-container" data-user="usuario4" data-likes="76.000" data-caption="Selfie casual 😊" data-img="img/perfil4.jpg">
+      <div class="post-header">
+        <img src="img/perfil4.jpg" alt="usuario4" />
+        <strong>usuario4</strong>
+      </div>
+      <img src="img/perfil4.jpg" alt="Publicacion 5" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>76.000 likes</strong></div>
+      <div class="post-caption"><strong>usuario4</strong> Selfie casual 😊</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 6 -->
+    <div class="post-container" data-user="usuario3" data-likes="512" data-caption="Explorando la ciudad 👟💕" data-img="img/tattoo3.jpg">
+      <div class="post-header">
+        <img src="img/tattoo3.jpg" alt="usuario3" />
+        <strong>usuario3</strong>
+      </div>
+      <img src="img/tattoo3.jpg" alt="Publicacion 6" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>512 likes</strong></div>
+      <div class="post-caption"><strong>usuario3</strong> Explorando la ciudad 👟💕</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 7 -->
+    <div class="post-container" data-user="usuario4" data-likes="76" data-caption="Selfie casual 😊" data-img="img/perfil6.jpg">
+      <div class="post-header">
+        <img src="img/perfil6.jpg" alt="usuario4" />
+        <strong>usuario4</strong>
+      </div>
+      <img src="img/perfil6.jpg" alt="Publicacion 7" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>76 likes</strong></div>
+      <div class="post-caption"><strong>usuario4</strong> Selfie casual 😊</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 8 -->
+    <div class="post-container" data-user="usuario5" data-likes="301" data-caption="Mi nuevo diseño de tattoo." data-img="img/perfil7.jpg">
+      <div class="post-header">
+        <img src="img/perfil7.jpg" alt="usuario5" />
+        <strong>usuario5</strong>
+      </div>
+      <img src="img/perfil7.jpg" alt="Publicacion 8" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>301 likes</strong></div>
+      <div class="post-caption"><strong>usuario5</strong> Mi nuevo diseño de tattoo.</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Publicación 9 -->
+    <div class="post-container" data-user="usuario5" data-likes="301" data-caption="Mi nuevo diseño de tattoo." data-img="img/tattoo1.jpg">
+      <div class="post-header">
+        <img src="img/tattoo1.jpg" alt="usuario5" />
+        <strong>usuario5</strong>
+      </div>
+      <img src="img/tattoo1.jpg" alt="Publicacion 9" class="post-image" />
+      <div class="post-actions">
+        <div>
+          <i class="far fa-heart like-btn" aria-label="Me gusta"></i>
+          <i class="far fa-comment comment-btn" aria-label="Comentar"></i>
+          <i class="far fa-paper-plane" aria-label="Enviar"></i>
+        </div>
+        <i class="far fa-bookmark" aria-label="Guardar"></i>
+      </div>
+      <div class="post-likes"><strong>301 likes</strong></div>
+      <div class="post-caption"><strong>usuario5</strong> Mi nuevo diseño de tattoo.</div>
+      <div class="comment-section">
+        <div class="existing-comments"></div>
+        <form>
+          <input type="text" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para vista ampliada -->
+  <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong id="modalUsername" class="me-auto" style="cursor: pointer;"></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <img id="modalImage" src="" class="w-100" style="max-height:500px;object-fit:cover;">
+      <div class="modal-body">
+        <div class="post-actions d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <i id="modalLikeBtn" class="far fa-heart like-btn mx-2" aria-label="Me gusta"></i>
+            <i id="modalCommentBtn" class="far fa-comment comment-btn mx-2" aria-label="Comentar"></i>
+            <i id="modalShareBtn" class="far fa-paper-plane mx-2" aria-label="Enviar"></i>
+            <strong id="modalLikes" class="ms-2"></strong>
+          </div>
+          <i class="far fa-bookmark" aria-label="Guardar"></i>
+        </div>
+        
+        
+        <div id="modalCaptionSection" class="mb-3"><p id="modalCaption" class="mb-0"></p></div>
+
+        <div id="modalCommentsSection" class="mb-3">
+          <div id="modalExistingComments"></div>
+        </div>
+
+        <form id="modalCommentForm" class="d-flex">
+          <input id="modalCommentInput" type="text" class="form-control me-2" placeholder="Añadir un comentario…" aria-label="Añadir comentario" />
+          <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const gridBtn = document.getElementById("gridView");
+  const listBtn = document.getElementById("listView");
+  const gridFeed = document.getElementById("gridFeed");
+  const listFeed = document.getElementById("listFeed");
+
+  gridBtn.addEventListener("click", () => {
+    gridFeed.classList.remove("d-none");
+    listFeed.classList.add("d-none");
+    gridBtn.classList.add("btn-primary");
+    gridBtn.classList.remove("btn-outline-primary");
+    listBtn.classList.remove("btn-primary");
+    listBtn.classList.add("btn-outline-primary");
+  });
+
+  listBtn.addEventListener("click", () => {
+    listFeed.classList.remove("d-none");
+    gridFeed.classList.add("d-none");
+    listBtn.classList.add("btn-primary");
+    listBtn.classList.remove("btn-outline-primary");
+    gridBtn.classList.remove("btn-primary");
+    gridBtn.classList.add("btn-outline-primary");
+  });
+
+  // Funcionalidad en vista de lista
+  document.querySelectorAll("#listFeed .post-container").forEach(post => {
+    const likeBtn = post.querySelector(".like-btn");
+    const commentBtn = post.querySelector(".comment-btn");
+    const commentSection = post.querySelector(".comment-section");
+    const likesCountEl = post.querySelector(".post-likes strong");
+    const form = commentSection.querySelector("form");
+    const input = form.querySelector("input");
+    const existingComments = post.querySelector(".existing-comments");
+
+    likeBtn.addEventListener("click", () => {
+      const liked = likeBtn.classList.toggle("liked");
+      let count = parseInt(likesCountEl.textContent.replace(/\./g,'')) || 0;
+      liked ? count++ : count--;
+      likesCountEl.textContent = Math.max(count, 0).toLocaleString() + " likes";
+    });
+
+    commentBtn.addEventListener("click", () => {
+      commentSection.classList.toggle("active");
+      if (commentSection.classList.contains("active")) input.focus();
+    });
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const txt = input.value.trim();
+      if (txt) {
+        const div = document.createElement("div");
+        div.textContent = txt;
+        existingComments.appendChild(div);
+        input.value = "";
+      }
+    });
+  });
+
+  // Funcionalidad en el modal
+  let modalLikesEl, modalCommentsEl;
+
+  document.querySelectorAll('#gridFeed .col-4').forEach(post => {
+    post.addEventListener('click', () => {
+      document.getElementById('modalImage').src = post.dataset.img;
+      document.getElementById('modalUsername').textContent = post.dataset.user;
+      document.getElementById('modalLikes').textContent = post.dataset.likes + " likes";
+      document.getElementById('modalCaption').textContent = post.dataset.caption;
+      document.getElementById('modalExistingComments').innerHTML = "";
+
+      modalLikesEl = document.getElementById('modalLikes');
+      modalCommentsEl = document.getElementById('modalExistingComments');
+
+      new bootstrap.Modal(document.getElementById('postModal')).show();
+    });
+  });
+
+  const modalLikeBtn = document.getElementById('modalLikeBtn');
+  const modalCommentBtn = document.getElementById('modalCommentBtn');
+  const modalCommentsSection = document.getElementById('modalCommentsSection');
+  const modalForm = document.getElementById('modalCommentForm');
+  const modalInput = document.getElementById('modalCommentInput');
+
+  modalLikeBtn.addEventListener("click", () => {
+    modalLikeBtn.classList.toggle("liked");
+    let count = parseInt(modalLikesEl.textContent.replace(/\./g,'').split(' ')[0]) || 0;
+    modalLikeBtn.classList.contains("liked") ? count++ : count--;
+    modalLikesEl.textContent = Math.max(count, 0).toLocaleString() + " likes";
+  });
+
+  modalCommentBtn.addEventListener("click", () => {
+    modalCommentsSection.classList.toggle("active");
+    if (modalCommentsSection.classList.contains("active")) modalInput.focus();
+  });
+
+  modalForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const txt = modalInput.value.trim();
+    if (txt) {
+      const div = document.createElement("div");
+      div.textContent = txt;
+      modalCommentsEl.appendChild(div);
+      modalInput.value = "";
+    }
+  });
+});
+</script>
+
+</body>
+</html>

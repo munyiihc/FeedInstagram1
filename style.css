@@ -1,0 +1,117 @@
+body {
+      background: #fafafa;
+    }
+
+    /* Grid fotos cuadradas */
+#gridFeed .col-4 {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0; /* elimina padding conflictivo */
+  position: relative;
+}
+
+#gridFeed .col-4 img {
+  width: 98%;
+  height: 98%;
+  object-fit: cover;
+  display: block;
+  gap:4px;
+}
+
+    /* Feed lista */
+.post-container {
+    background: white;
+    margin-bottom: 25px;
+    border: 1px solid #dbdbdb;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    gap: 12px;
+}
+
+.post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-header strong {
+    font-weight: 600;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.post-actions {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.post-actions i {
+    cursor: pointer;
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+
+.post-actions i.liked {
+    color: #ed4956;
+}
+
+.post-likes, .post-caption {
+    padding: 0 12px 12px 12px;
+    font-size: 0.95rem;
+}
+
+.post-caption strong {
+    margin-right: 5px;
+}
+
+.comment-section {
+    padding: 0 12px 12px 12px;
+    display: none;
+}
+
+.comment-section.active {
+    display: block;
+}
+
+.comment-section .existing-comments div {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+}
+
+.comment-section form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.comment-section input {
+    flex: 1;
+    border: 1px solid #dbdbdb;
+    border-radius: 9999px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+.comment-section button {
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
